@@ -1,4 +1,5 @@
 :root {
+  /* box-sizing: border-box; */
   /* Fonts */
   --primary-font: "Open Sans", sans-serif;
   --secondary-font: "Raleway", sans-serif;
@@ -15,15 +16,32 @@
 }
 
 /* Base styles */
+/* *,
+*::before,
+*::after {
+  box-sizing: inherit;
+} */
 body {
   font-family: var(--primary-font);
   color: var(--primary-cl);
+}
+/* reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 a {
   text-decoration: none;
   color: currentColor;
 }
 ul {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 button {
@@ -31,10 +49,38 @@ button {
   color: inherit;
   cursor: pointer;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 /* Common styles */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 .section {
+  padding: 120px 0;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  outline: 2px solid red;
+  outline-offset: -2px;
 }
 .main-title {
+  margin-bottom: 20px;
   font-family: var(--secondary-font);
   font-size: 72px;
   line-height: 1.18;
@@ -42,6 +88,8 @@ button {
   color: var(--light-cl);
 }
 .uppertitle {
+  margin-bottom: 20px;
+
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
@@ -51,21 +99,28 @@ button {
   color: var(--grey-cl-60);
 }
 .title {
+  margin-bottom: 20px;
+
   font-family: var(--secondary-font);
   font-size: 42px;
   line-height: 1.17;
   letter-spacing: 0.05em;
 }
 .title-dark {
+  margin-bottom: 44px;
   color: var(--light-cl);
 }
 .subtitle {
+  margin-bottom: 20px;
+
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
   color: var(--secondary-cl);
 }
 .btn {
+  padding: 11px 19px;
+
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
@@ -74,6 +129,9 @@ button {
   color: var(--primary-cl);
 
   background-color: transparent;
+
+  border: 1px solid var(--accent-cl);
+  border-radius: 25px;
 }
 .btn-dark {
   color: var(--light-cl);
@@ -151,6 +209,8 @@ button {
   color: var(--accent-cl);
 }
 .hero-desc {
+  width: 360px;
+
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
@@ -182,7 +242,12 @@ button {
 }
 .about-img {
 }
+.about-right-side {
+  width: 470px;
+}
 .about-desc {
+  margin-bottom: 42px;
+
   font-size: 14px;
   line-height: 1.86;
   letter-spacing: 0.02em;
@@ -199,14 +264,32 @@ button {
   background-color: var(--dark-cl);
 }
 .price-list {
+  width: 570px;
+  padding: 30px 20px;
+
+  outline: 2px solid hotpink;
+  outline-offset: -2px;
 }
 .price-item {
+  /* margin-bottom: 20px; */
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
   color: var(--grey-cl);
 }
+/* .price-item:last-child {
+  margin-bottom: 0;
+} */
+.price-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+/* an + b */
+/* .price-item:nth-last-child(3n) {
+  background: #d56f26;
+} */
+
 .price-btn {
+  margin-top: 44px;
 }
 /**
   |============================
