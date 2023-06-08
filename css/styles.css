@@ -11,16 +11,15 @@
   --light-bg: #f7f7f7;
   --dark-cl: #111319;
   --grey-cl: #9da4bd;
+  --grey-cl-20: rgba(157, 164, 189, 0.2);
   --grey-cl-40: rgba(157, 164, 189, 0.4);
   --grey-cl-60: rgba(157, 164, 189, 0.6);
+  /* Others */
+  --indent: 30px;
+  --items: 3;
 }
 
 /* Base styles */
-/* *,
-*::before,
-*::after {
-  box-sizing: inherit;
-} */
 body {
   font-family: var(--primary-font);
   color: var(--primary-cl);
@@ -142,26 +141,51 @@ img {
   color: var(--light-cl);
   background-color: var(--accent-cl);
 }
-
+/**
+  |============================
+  | Flexbox grid
+  |============================
+*/
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+}
+.card-set-item {
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
+}
 /**
   |============================
   | Header styles
   |============================
 */
 .header {
+  padding-top: 22px;
   background-color: var(--dark-cl);
 }
+.header-container {
+  display: flex;
+  align-items: center;
+}
 .header-logo {
+  margin-right: 124px;
 }
 .header-img {
 }
 .header-nav {
+  margin-right: auto;
 }
 .header-list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 .header-item {
 }
 .header-link {
+  display: block;
+  padding: 30px 0;
+
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
@@ -171,6 +195,11 @@ img {
 .header-link:hover,
 .header-link:focus {
   color: var(--accent-cl);
+}
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 .header-contact {
   font-weight: 600;
@@ -193,7 +222,13 @@ img {
 .hero {
   background-color: var(--dark-cl);
 }
+.hero-container {
+  display: flex;
+}
 .networks {
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 .networks-item {
 }
@@ -217,10 +252,18 @@ img {
   color: var(--grey-cl);
 }
 .hero-controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 .hero-controls-item {
 }
 .hero-controls-btn {
+  min-width: 60px;
+  min-height: 24px;
+  padding: 0;
+  padding-bottom: 8px;
+
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
@@ -228,6 +271,18 @@ img {
   color: var(--light-cl);
 
   background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--light-cl);
+}
+.hero-controls-btn.btn-prev {
+  text-align: left;
+}
+.hero-controls-btn.btn-next {
+  text-align: right;
+}
+.hero-controls-btn.disabled {
+  color: var(--grey-cl-60);
+  border-color: var(--grey-cl-60);
 }
 /**
   |============================
@@ -236,7 +291,13 @@ img {
 */
 .about {
 }
+.about-container {
+  display: flex;
+  gap: 30px;
+}
 .about-list {
+  display: flex;
+  gap: 30px;
 }
 .about-item {
 }
@@ -263,6 +324,10 @@ img {
 .price {
   background-color: var(--dark-cl);
 }
+.price-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 .price-list {
   width: 570px;
   padding: 30px 20px;
@@ -271,24 +336,30 @@ img {
   outline-offset: -2px;
 }
 .price-item {
-  /* margin-bottom: 20px; */
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
   color: var(--grey-cl);
 }
-/* .price-item:last-child {
-  margin-bottom: 0;
-} */
+
 .price-item:not(:last-child) {
   margin-bottom: 20px;
 }
-/* an + b */
-/* .price-item:nth-last-child(3n) {
-  background: #d56f26;
-} */
+.line {
+  display: block;
+  height: 1px;
+  flex-grow: 1;
+
+  background-color: var(--grey-cl-20);
+}
 
 .price-btn {
+  display: block;
+  margin: 0 auto;
   margin-top: 44px;
 }
 /**
@@ -298,11 +369,36 @@ img {
 */
 .benefits {
 }
+.benefits-container {
+  display: flex;
+  gap: 30px;
+}
+
 .benefits-list {
+  width: 570px;
+  padding: 0 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 .benefits-item {
+  width: 170px;
+  min-height: 133px;
+  padding: 20px 24px;
+
+  text-align: center;
+
+  background: var(--light-bg);
+}
+.benefits-item:nth-child(2n) {
+  margin-top: 30px;
+  margin-left: 30px;
 }
 .benefits-quantity {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+
   font-weight: 700;
   font-size: 42px;
   line-height: 1.36;
@@ -310,6 +406,8 @@ img {
   letter-spacing: 0.05em;
 }
 .benefits-sign {
+  margin-top: 14px;
+
   font-weight: 600;
   font-size: 16px;
   line-height: 1.38;
@@ -321,6 +419,9 @@ img {
   font-size: 11px;
   line-height: 1.36;
   text-align: center;
+}
+.benefits-right-side {
+  width: 500px;
 }
 .benefits-desc {
   font-size: 18px;
@@ -341,6 +442,12 @@ img {
 .team-item {
 }
 .team-pic {
+}
+.team-wrapper {
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
 }
 .team-name {
   font-weight: 400;
@@ -372,6 +479,7 @@ img {
 .gallery {
 }
 .gallery-list {
+  --items: 4;
 }
 .gallery-item {
 }

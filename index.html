@@ -24,21 +24,11 @@
       href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
     />
     <link rel="stylesheet" href="./css/styles.css" />
-
-    <!--
-      Critical css
-      <style>
-      section {
-        background-color: lightgreen;
-        color: white;
-        line-height: 1.5;
-      }
-    </style> -->
   </head>
   <body>
     <!-- Header section -->
     <header class="header">
-      <div class="container">
+      <div class="header-container container">
         <a class="header-logo" href="./index.html">
           <img
             class="header-img"
@@ -67,7 +57,7 @@
             </li>
           </ul>
         </nav>
-        <div class="wrapper">
+        <div class="header-wrapper">
           <a class="header-contact" href="tel:+380441111111">+38 044 111 11 11</a>
           <button class="header-btn btn btn-dark" type="button">Online-booking</button>
         </div>
@@ -77,7 +67,7 @@
     <main>
       <!-- Hero section -->
       <section class="hero section">
-        <div class="container">
+        <div class="hero-container container">
           <ul class="networks">
             <li class="networks-item">
               <a
@@ -100,25 +90,27 @@
               </a>
             </li>
           </ul>
-          <p class="uppertitle uppertitle-dark">A hair salon for men in Kyiv</p>
-          <h1 class="main-title">BarberShop</h1>
-          <p class="hero-desc">
-            We are experts in trendy men’s haircuts. We <span>work quickly</span>, carefully and
-            with style.
-          </p>
+          <div class="hero-right-side">
+            <p class="uppertitle uppertitle-dark">A hair salon for men in Kyiv</p>
+            <h1 class="main-title">BarberShop</h1>
+            <p class="hero-desc">
+              We are experts in trendy men’s haircuts. We <span>work quickly</span>, carefully and
+              with style.
+            </p>
+          </div>
           <ul class="hero-controls">
             <li class="hero-controls-item">
-              <button class="hero-controls-btn" type="button">Back</button>
+              <button class="hero-controls-btn btn-prev disabled" type="button">Back</button>
             </li>
             <li class="hero-controls-item">
-              <button class="hero-controls-btn" type="button">Forward</button>
+              <button class="hero-controls-btn btn-next" type="button">Forward</button>
             </li>
           </ul>
         </div>
       </section>
       <!-- About section -->
       <section class="about section" id="about">
-        <div class="container">
+        <div class="about-container container">
           <ul class="about-list">
             <li class="about-item">
               <img
@@ -160,24 +152,34 @@
         <div class="container">
           <p class="uppertitle uppertitle-dark">Spend your time with the best masters</p>
           <h2 class="title title-dark">Services and prices</h2>
-          <ul class="price-list">
-            <li class="price-item">Men’s haircut <span></span>from 300 uah.</li>
-            <li class="price-item">Beard trim <span></span>from 300 uah.</li>
-            <li class="price-item">Mustache trim <span></span>from 200 uah.</li>
-            <li class="price-item">Straight razor shave<span></span>from 200 uah.</li>
-          </ul>
-          <ul class="price-list">
-            <li class="price-item">Trainee’s haircut <span></span>from 50 uah.</li>
-            <li class="price-item">Haircut under the nozzle <span></span>from 200 uah.</li>
-            <li class="price-item">Children’s haircut (0-12 y.o.) <span></span>from 300 uah.</li>
-            <li class="price-item">Camouflage of gray hair <span></span>from 200 uah.</li>
-          </ul>
+          <div class="price-wrapper">
+            <ul class="price-list">
+              <li class="price-item">Men’s haircut <span class="line"></span>from 300 uah.</li>
+              <li class="price-item">Beard trim <span class="line"></span>from 300 uah.</li>
+              <li class="price-item">Mustache trim <span class="line"></span>from 200 uah.</li>
+              <li class="price-item">
+                Straight razor shave<span class="line"></span>from 200 uah.
+              </li>
+            </ul>
+            <ul class="price-list">
+              <li class="price-item">Trainee’s haircut <span class="line"></span>from 50 uah.</li>
+              <li class="price-item">
+                Haircut under the nozzle <span class="line"></span>from 200 uah.
+              </li>
+              <li class="price-item">
+                Children’s haircut (0-12 y.o.) <span class="line"></span>from 300 uah.
+              </li>
+              <li class="price-item">
+                Camouflage of gray hair <span class="line"></span>from 200 uah.
+              </li>
+            </ul>
+          </div>
           <button class="price-btn btn btn-dark" type="button">Online-booking</button>
         </div>
       </section>
       <!-- Benefits section -->
       <section class="benefits section">
-        <div class="container">
+        <div class="benefits-container container">
           <ul class="benefits-list">
             <li class="benefits-item">
               <p class="benefits-quantity">600 <sup class="benefits-sign">&plus;</sup></p>
@@ -196,12 +198,14 @@
               <p class="benefits-text">Gifts for regular customers</p>
             </li>
           </ul>
-          <p class="uppertitle">Old traditional school</p>
-          <h2 class="title">Why people come to us?</h2>
-          <p class="benefits-desc">
-            Only good things are said about us. But it's better to see and feel 1 time than read 10
-            times.
-          </p>
+          <div class="benefits-right-side">
+            <p class="uppertitle">Old traditional school</p>
+            <h2 class="title">Why people come to&nbsp;us?</h2>
+            <p class="benefits-desc">
+              Only good things are said about us. But it's better to see and feel 1 time than read
+              10 times.
+            </p>
+          </div>
         </div>
       </section>
       <!-- Team section -->
@@ -209,8 +213,8 @@
         <div class="container">
           <p class="uppertitle">For true enjoyers of the atmosphere</p>
           <h2 class="title">Our barbers</h2>
-          <ul class="team-list">
-            <li class="team-item">
+          <ul class="team-list card-set">
+            <li class="team-item card-set-item">
               <img
                 class="team-pic"
                 src="./images/team/img-1.jpg"
@@ -218,56 +222,58 @@
                 width="370"
                 height="346"
               />
-              <h3 class="team-name">John Smith</h3>
-              <p class="team-position">Extreme Barber</p>
-              <ul class="socials">
-                <li class="socials-item">
-                  <a class="socials-link" href="" target="_blank" rel="noopener norefferer">
-                    <img
-                      class="socials-icon"
-                      src="./images/socials/instagram.svg"
-                      alt="Icon Snstagram"
-                      width="20"
-                      height="20"
-                    />
-                  </a>
-                </li>
-                <li class="socials-item">
-                  <a class="socials-link" href="" target="_blank" rel="noopener norefferer">
-                    <img
-                      class="socials-icon"
-                      src="./images/socials/twitter.svg"
-                      alt="Icon Twitter"
-                      width="20"
-                      height="20"
-                    />
-                  </a>
-                </li>
-                <li class="socials-item">
-                  <a class="socials-link" href="" target="_blank" rel="noopener norefferer">
-                    <img
-                      class="socials-icon"
-                      src="./images/socials/facebook.svg"
-                      alt="Icon Facebook"
-                      width="20"
-                      height="20"
-                    />
-                  </a>
-                </li>
-                <li class="socials-item">
-                  <a class="socials-link" href="" target="_blank" rel="noopener norefferer">
-                    <img
-                      class="socials-icon"
-                      src="./images/socials/linkedin.svg"
-                      alt="Icon Linkedin"
-                      width="20"
-                      height="20"
-                    />
-                  </a>
-                </li>
-              </ul>
+              <div class="team-wrapper">
+                <h3 class="team-name">John Smith</h3>
+                <p class="team-position">Extreme Barber</p>
+                <!-- <ul class="socials">
+                  <li class="socials-item">
+                    <a class="socials-link" href="" target="_blank" rel="noopener norefferer">
+                      <img
+                        class="socials-icon"
+                        src="./images/socials/instagram.svg"
+                        alt="Icon Snstagram"
+                        width="20"
+                        height="20"
+                      />
+                    </a>
+                  </li>
+                  <li class="socials-item">
+                    <a class="socials-link" href="" target="_blank" rel="noopener norefferer">
+                      <img
+                        class="socials-icon"
+                        src="./images/socials/twitter.svg"
+                        alt="Icon Twitter"
+                        width="20"
+                        height="20"
+                      />
+                    </a>
+                  </li>
+                  <li class="socials-item">
+                    <a class="socials-link" href="" target="_blank" rel="noopener norefferer">
+                      <img
+                        class="socials-icon"
+                        src="./images/socials/facebook.svg"
+                        alt="Icon Facebook"
+                        width="20"
+                        height="20"
+                      />
+                    </a>
+                  </li>
+                  <li class="socials-item">
+                    <a class="socials-link" href="" target="_blank" rel="noopener norefferer">
+                      <img
+                        class="socials-icon"
+                        src="./images/socials/linkedin.svg"
+                        alt="Icon Linkedin"
+                        width="20"
+                        height="20"
+                      />
+                    </a>
+                  </li>
+                </ul> -->
+              </div>
             </li>
-            <li class="team-item">
+            <li class="team-item card-set-item">
               <img
                 class="team-pic"
                 src="./images/team/img-2.jpg"
@@ -324,7 +330,7 @@
                 </li>
               </ul>
             </li>
-            <li class="team-item">
+            <li class="team-item card-set-item">
               <img
                 class="team-pic"
                 src="./images/team/img-3.jpg"
@@ -389,8 +395,8 @@
         <div class="container">
           <p class="uppertitle">In Latin, "barba" means "beard"</p>
           <h2 class="visually-hidden">Barbershop gallery</h2>
-          <ul class="gallery-list">
-            <li class="gallery-item">
+          <ul class="gallery-list card-set">
+            <li class="gallery-item card-set-item">
               <img
                 class="gallery-img"
                 src="./images/gallery/img-1.jpg"
@@ -399,7 +405,7 @@
                 height="360"
               />
             </li>
-            <li class="gallery-item">
+            <li class="gallery-item card-set-item">
               <img
                 class="gallery-img"
                 src="./images/gallery/img-2.jpg"
@@ -408,7 +414,7 @@
                 height="360"
               />
             </li>
-            <li class="gallery-item">
+            <li class="gallery-item card-set-item">
               <img
                 class="gallery-img"
                 src="./images/gallery/img-3.jpg"
@@ -417,7 +423,7 @@
                 height="360"
               />
             </li>
-            <li class="gallery-item">
+            <li class="gallery-item card-set-item">
               <img
                 class="gallery-img"
                 src="./images/gallery/img-4.jpg"
