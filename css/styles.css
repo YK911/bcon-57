@@ -450,6 +450,8 @@ img {
   padding-bottom: 30px;
 }
 .team-name {
+  margin-bottom: 6px;
+
   font-weight: 400;
   font-size: 18px;
   line-height: 1.67;
@@ -528,6 +530,14 @@ img {
   |============================
 */
 .footer {
+  padding-top: 52px;
+  padding-bottom: 52px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .footer-copyright {
   font-weight: 600;
