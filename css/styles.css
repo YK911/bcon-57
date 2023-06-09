@@ -15,6 +15,8 @@
   --grey-cl-40: rgba(157, 164, 189, 0.4);
   --grey-cl-60: rgba(157, 164, 189, 0.6);
   /* Others */
+  --primary-gradient: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
+  --secondary-gradient: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
   --indent: 30px;
   --items: 3;
 }
@@ -75,8 +77,8 @@ img {
   margin: 0 auto;
   padding: 0 15px;
 
-  outline: 2px solid red;
-  outline-offset: -2px;
+  /* outline: 2px solid red;
+  outline-offset: -2px; */
 }
 .main-title {
   margin-bottom: 20px;
@@ -88,14 +90,27 @@ img {
 }
 .uppertitle {
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
 }
+.uppertitle::before {
+  content: "";
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background-color: var(--primary-cl);
+}
 .uppertitle-dark {
   color: var(--grey-cl-60);
+}
+.uppertitle-dark:before {
+  background-color: var(--grey-cl-60);
 }
 .title {
   margin-bottom: 20px;
@@ -230,6 +245,13 @@ img {
   align-items: center;
   gap: 40px;
 }
+.networks::before {
+  content: "";
+
+  width: 60px;
+  height: 1px;
+  background-color: var(--primary-cl);
+}
 .networks-item {
 }
 .networks-link {
@@ -322,7 +344,14 @@ img {
   |============================
 */
 .price {
+  max-width: 1600px;
+  margin: 0 auto;
+
   background-color: var(--dark-cl);
+  background-image: url(../images/price/bg-img.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .price-wrapper {
   display: flex;
@@ -331,9 +360,12 @@ img {
 .price-list {
   width: 570px;
   padding: 30px 20px;
-
-  outline: 2px solid hotpink;
-  outline-offset: -2px;
+}
+.price-list:first-child {
+  background-image: var(--primary-gradient);
+}
+.price-list:last-child {
+  background-image: var(--secondary-gradient);
 }
 .price-item {
   display: flex;
@@ -349,12 +381,17 @@ img {
 .price-item:not(:last-child) {
   margin-bottom: 20px;
 }
-.line {
+.price-item::before {
+  content: "";
+
   display: block;
   height: 1px;
   flex-grow: 1;
 
   background-color: var(--grey-cl-20);
+}
+.price-service {
+  order: -1;
 }
 
 .price-btn {
@@ -389,6 +426,7 @@ img {
   text-align: center;
 
   background: var(--light-bg);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .benefits-item:nth-child(2n) {
   margin-top: 30px;
@@ -459,6 +497,8 @@ img {
   letter-spacing: 0.02em;
 }
 .team-position {
+  margin-bottom: 30px;
+
   font-size: 14px;
   line-height: 1.36;
   text-align: center;
@@ -466,12 +506,39 @@ img {
   color: var(--accent-cl);
 }
 .socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 .socials-item {
 }
 .socials-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  /* color: var(--primary-cl); */
+  background-color: var(--light-cl);
+  border-radius: 50%;
 }
+
+/* .socials-link:hover {
+  color: var(--accent-cl);
+}
+
 .socials-icon {
+  fill: currentColor;
+} */
+
+.socials-icon {
+  fill: var(--primary-cl);
+}
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
+  fill: var(--accent-cl);
 }
 /**
   |============================
@@ -492,8 +559,18 @@ img {
   | Booking styles
   |============================
 */
-.booking {
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
   background-color: var(--dark-cl);
+  background-image: url(../images/contacts/bg-img.png);
+  background-repeat: no-repeat;
+  background-position: top right calc(50% - 408px);
+  background-size: contain;
+}
+.booking {
+  width: 570px;
 }
 /**
   |============================
@@ -501,16 +578,23 @@ img {
   |============================
 */
 .contacts {
-  background-color: var(--dark-cl);
+  width: 570px;
+  padding-left: 100px;
 }
 .contacts-address {
+  margin-bottom: 72px;
   font-style: normal;
 }
 .contacts-list {
 }
-.contacts-item {
+.contacts-item:not(:last-child) {
+  margin-bottom: 20px;
 }
 .contatcs-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
