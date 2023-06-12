@@ -52,44 +52,45 @@
             <li class="header-item">
               <a class="header-link" href="#contacts">Contacts</a>
             </li>
-            <li class="header-item">
-              <a class="header-link" href="./reviews.html">Reviews</a>
-            </li>
           </ul>
         </nav>
         <div class="header-wrapper">
           <a class="header-contact" href="tel:+380441111111">+38 044 111 11 11</a>
-          <button class="header-btn btn btn-dark" type="button">Online-booking</button>
+          <button class="header-btn btn btn-dark" type="button" data-modal-open>
+            Online-booking
+          </button>
         </div>
       </div>
     </header>
     <!-- Main block -->
     <main>
       <!-- Hero section -->
-      <section class="hero section">
+      <section class="hero">
         <div class="hero-container container">
-          <ul class="networks">
-            <li class="networks-item">
-              <a
-                class="networks-link"
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-            </li>
-            <li class="networks-item">
-              <a
-                class="networks-link"
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Youtube
-              </a>
-            </li>
-          </ul>
+          <div class="hero-left-side">
+            <ul class="networks">
+              <li class="networks-item">
+                <a
+                  class="networks-link"
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li class="networks-item">
+                <a
+                  class="networks-link"
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Youtube
+                </a>
+              </li>
+            </ul>
+          </div>
           <div class="hero-right-side">
             <p class="uppertitle uppertitle-dark">A hair salon for men in Kyiv</p>
             <h1 class="main-title">BarberShop</h1>
@@ -549,5 +550,17 @@
         </ul>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn" type="button" data-modal-close>
+          <svg class="modal-btn-icon" width="20" height="20">
+            <use href="./images/icons.svg#modal-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
