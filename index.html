@@ -18,25 +18,22 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@700&display=swap"
       rel="stylesheet"
     />
-    <!-- Custom styles -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- Custom styles -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <!-- Header section -->
-    <header class="header">
+    <header class="header" data-header>
       <div class="header-container container">
-        <a class="header-logo" href="./index.html">
-          <img
-            class="header-img"
-            src="./images/header/logo.svg"
-            alt="Barbershop logo"
-            width="76"
-            height="76"
-          />
+        <a class="header-logo" href="./index.html" aria-label="Barbershop logo">
+          <svg class="header-icon" width="76" height="76">
+            <use href="./images/icons.svg#logo"></use>
+          </svg>
         </a>
         <nav class="header-nav">
           <ul class="header-list">
@@ -68,7 +65,7 @@
       <section class="hero">
         <div class="hero-container container">
           <div class="hero-left-side">
-            <ul class="networks">
+            <ul class="header-networks networks">
               <li class="networks-item">
                 <a
                   class="networks-link"
@@ -92,8 +89,8 @@
             </ul>
           </div>
           <div class="hero-right-side">
-            <p class="uppertitle uppertitle-dark">A hair salon for men in Kyiv</p>
-            <h1 class="main-title">BarberShop</h1>
+            <p class="hero-uppertitle uppertitle uppertitle-dark">A hair salon for men in Kyiv</p>
+            <h1 class="hero-title main-title">BarberShop</h1>
             <p class="hero-desc">
               We are experts in trendy men’s haircuts. We <span>work quickly</span>, carefully and
               with style.
@@ -106,6 +103,11 @@
             <li class="hero-controls-item">
               <button class="hero-controls-btn btn-next" type="button">Forward</button>
             </li>
+          </ul>
+          <ul class="hero-pagination">
+            <li class="hero-pagination-item active"></li>
+            <li class="hero-pagination-item"></li>
+            <li class="hero-pagination-item"></li>
           </ul>
         </div>
       </section>
@@ -190,19 +192,39 @@
       <section class="benefits section">
         <div class="benefits-container container">
           <ul class="benefits-list">
-            <li class="benefits-item">
+            <li
+              class="benefits-item"
+              data-aos="zoom-in-up"
+              data-aos-duration="800"
+              data-aos-delay="300"
+            >
               <p class="benefits-quantity">600 <sup class="benefits-sign">&plus;</sup></p>
               <p class="benefits-text">Satisfied customers per day</p>
             </li>
-            <li class="benefits-item">
+            <li
+              class="benefits-item"
+              data-aos="zoom-in-up"
+              data-aos-duration="800"
+              data-aos-delay="600"
+            >
               <p class="benefits-quantity">50 <sup class="benefits-sign">&plus;</sup></p>
               <p class="benefits-text">Awards for excellent service</p>
             </li>
-            <li class="benefits-item">
+            <li
+              class="benefits-item"
+              data-aos="zoom-in-up"
+              data-aos-duration="800"
+              data-aos-delay="900"
+            >
               <p class="benefits-quantity">20 <sup class="benefits-sign">&plus;</sup></p>
               <p class="benefits-text">Kyiv’s best professional barbers</p>
             </li>
-            <li class="benefits-item">
+            <li
+              class="benefits-item"
+              data-aos="zoom-in-up"
+              data-aos-duration="800"
+              data-aos-delay="1200"
+            >
               <p class="benefits-quantity">100 <sup class="benefits-sign">&plus;</sup></p>
               <p class="benefits-text">Gifts for regular customers</p>
             </li>
@@ -224,13 +246,21 @@
           <h2 class="title">Our barbers</h2>
           <ul class="team-list card-set">
             <li class="team-item card-set-item">
-              <img
-                class="team-pic"
-                src="./images/team/img-1.jpg"
-                alt="John Smith - Extreme Barber"
-                width="370"
-                height="346"
-              />
+              <div class="team-thumb">
+                <img
+                  class="team-pic"
+                  src="./images/team/img-1.jpg"
+                  alt="John Smith - Extreme Barber"
+                  width="370"
+                  height="346"
+                />
+                <div class="overlay">
+                  <p class="overlay-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eligendi obcaecati
+                    dicta!
+                  </p>
+                </div>
+              </div>
               <div class="team-wrapper">
                 <h3 class="team-name">John Smith</h3>
                 <p class="team-position">Extreme Barber</p>
@@ -292,13 +322,21 @@
               </div>
             </li>
             <li class="team-item card-set-item">
-              <img
-                class="team-pic"
-                src="./images/team/img-2.jpg"
-                alt="Michele Doe - Extreme Barber"
-                width="370"
-                height="346"
-              />
+              <div class="team-thumb">
+                <img
+                  class="team-pic"
+                  src="./images/team/img-2.jpg"
+                  alt="Michele Doe - Extreme Barber"
+                  width="370"
+                  height="346"
+                />
+                <div class="overlay">
+                  <p class="overlay-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eligendi obcaecati
+                    dicta!
+                  </p>
+                </div>
+              </div>
               <div class="team-wrapper">
                 <h3 class="team-name">Michele Doe</h3>
                 <p class="team-position">Extreme Barber</p>
@@ -359,13 +397,21 @@
               </div>
             </li>
             <li class="team-item card-set-item">
-              <img
-                class="team-pic"
-                src="./images/team/img-3.jpg"
-                alt="Alan Black - Extreme Barber"
-                width="370"
-                height="346"
-              />
+              <div class="team-thumb">
+                <img
+                  class="team-pic"
+                  src="./images/team/img-3.jpg"
+                  alt="Alan Black - Extreme Barber"
+                  width="370"
+                  height="346"
+                />
+                <div class="overlay">
+                  <p class="overlay-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eligendi obcaecati
+                    dicta!
+                  </p>
+                </div>
+              </div>
               <div class="team-wrapper">
                 <h3 class="team-name">Alan Black</h3>
                 <p class="team-position">Extreme Barber</p>
@@ -434,7 +480,12 @@
           <p class="uppertitle">In Latin, "barba" means "beard"</p>
           <h2 class="visually-hidden">Barbershop gallery</h2>
           <ul class="gallery-list card-set">
-            <li class="gallery-item card-set-item">
+            <li
+              class="gallery-item card-set-item"
+              data-aos="fade-right"
+              data-aos-duration="600"
+              data-aos-delay="300"
+            >
               <img
                 class="gallery-img"
                 src="./images/gallery/img-1.jpg"
@@ -443,7 +494,12 @@
                 height="360"
               />
             </li>
-            <li class="gallery-item card-set-item">
+            <li
+              class="gallery-item card-set-item"
+              data-aos="fade-right"
+              data-aos-duration="600"
+              data-aos-delay="600"
+            >
               <img
                 class="gallery-img"
                 src="./images/gallery/img-2.jpg"
@@ -452,7 +508,12 @@
                 height="360"
               />
             </li>
-            <li class="gallery-item card-set-item">
+            <li
+              class="gallery-item card-set-item"
+              data-aos="fade-right"
+              data-aos-duration="600"
+              data-aos-delay="900"
+            >
               <img
                 class="gallery-img"
                 src="./images/gallery/img-3.jpg"
@@ -461,7 +522,12 @@
                 height="360"
               />
             </li>
-            <li class="gallery-item card-set-item">
+            <li
+              class="gallery-item card-set-item"
+              data-aos="fade-right"
+              data-aos-duration="600"
+              data-aos-delay="1200"
+            >
               <img
                 class="gallery-img"
                 src="./images/gallery/img-4.jpg"
@@ -561,6 +627,11 @@
       </div>
     </div>
 
+    <!-- AOS animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/animation-on-scroll.js"></script>
+
+    <script src="./js/header.js"></script>
     <script src="./js/modal.js"></script>
   </body>
 </html>
