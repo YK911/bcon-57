@@ -137,6 +137,7 @@ img {
   color: var(--secondary-cl);
 }
 .btn {
+  min-width: 160px;
   padding: 11px 19px;
 
   font-weight: 600;
@@ -745,6 +746,94 @@ img {
 .booking {
   width: 570px;
 }
+.booking-form {
+}
+.booking-form-wrapper {
+  display: flex;
+  gap: 30px;
+
+  margin-bottom: 44px;
+}
+.booking-form-field {
+  position: relative;
+  display: block;
+}
+.booking-form-input {
+  width: 270px;
+  height: 24px;
+
+  font-size: 12px;
+  color: var(--light-cl);
+
+  outline: transparent;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--grey-cl-40);
+
+  transition: border-color var(--anim-fast);
+}
+.booking-form-input:focus {
+  border-color: var(--light-cl);
+}
+.booking-form-input:not(:placeholder-shown):required:invalid {
+  border-color: red;
+}
+.booking-form-input:not(:placeholder-shown):required:valid {
+  border-color: lightgreen;
+}
+.booking-form-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--grey-cl-40);
+
+  transform-origin: center left;
+  transition: transform var(--anim-fast), color var(--anim-fast);
+}
+.booking-form-input:not(:placeholder-shown) + .booking-form-tag,
+.booking-form-input:focus + .booking-form-tag,
+.booking-form-message:not(:placeholder-shown) + .booking-form-tag,
+.booking-form-message:focus + .booking-form-tag {
+  transform: translateY(-100%) scale(0.8);
+  color: white;
+}
+
+.booking-form-message {
+  width: 100%;
+  height: 76px;
+
+  font-size: 12px;
+  color: var(--light-cl);
+
+  outline: transparent;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--grey-cl-40);
+  resize: none;
+
+  transition: border-color var(--anim-fast);
+}
+.booking-form-message::placeholder {
+  opacity: 0;
+  transition: opacity var(--anim-fast);
+}
+.booking-form-message:focus::placeholder {
+  opacity: 1;
+  transition-delay: 200ms;
+}
+.booking-form-message:focus,
+.booking-form-message:not(:placeholder-shown) {
+  border-color: var(--light-cl);
+}
+.booking-form-btn {
+  margin-top: 44px;
+}
 /**
   |============================
   | Contacts styles
@@ -837,8 +926,9 @@ img {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 
-  width: 400px;
+  width: 500px;
   min-height: 500px;
+  padding: 30px;
 
   background-color: var(--light-cl);
   border-radius: 10px;
@@ -871,4 +961,107 @@ img {
 }
 .modal-btn-icon {
   fill: var(--light-cl);
+}
+
+.modal-title {
+  display: block;
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+.modal-form {
+}
+.modal-form-field {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+}
+.modal-form-tag {
+  display: block;
+  margin-bottom: 6px;
+
+  font-size: 14px;
+  color: var(--secondary-cl);
+}
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 44px;
+  padding-right: 44px;
+
+  outline: transparent;
+  border: 1px solid var(--dark-cl);
+  border-radius: 6px;
+
+  transition: border-color var(--anim-fast), box-shadow var(--anim-fast);
+}
+.modal-form-input:focus {
+  border-color: var(--accent-cl);
+  box-shadow: 0 0 0 4px rgba(255, 108, 0, 0.25);
+  transition-delay: 0, 200ms;
+}
+.modal-form-icon {
+  --accent-cl: #9da4bd;
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  color: var(--accent-cl);
+
+  transition: stroke var(--anim-fast), fill var(--anim-fast), color var(--anim-fast);
+}
+
+.modal-form-input:focus + .modal-form-icon {
+  --accent-cl: #ff6c00;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.modal-form-comment {
+  display: block;
+  width: 100%;
+  height: 120px;
+
+  padding: 8px 16px;
+  outline: transparent;
+  border: 1px solid var(--dark-cl);
+  border-radius: 6px;
+
+  transition: border-color var(--anim-fast), box-shadow var(--anim-fast);
+  resize: none;
+}
+.modal-form-comment:focus {
+  border-color: var(--accent-cl);
+  box-shadow: 0 0 0 4px rgba(255, 108, 0, 0.25);
+  transition-delay: 0, 200ms;
+}
+.modal-form-agreement {
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.unchecked {
+  opacity: 1;
+  transition: opacity var(--anim-slow);
+}
+.modal-form-checkbox:checked + .modal-form-checkbox-icons > .unchecked {
+  opacity: 0;
+}
+.checked {
+  opacity: 0;
+  transition: opacity var(--anim-slow);
+}
+.modal-form-checkbox:checked + .modal-form-checkbox-icons > .checked {
+  opacity: 1;
+}
+.modal-form-agreement-desc {
+  user-select: none;
+}
+.modal-form-agreement-link {
+  color: var(--accent-cl);
+}
+.modal-form-btn {
+  display: block;
+  margin: 0 auto;
 }
