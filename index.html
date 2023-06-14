@@ -543,6 +543,43 @@
         <!-- Booking section -->
         <section class="booking section">
           <h2 class="title title-dark">Online-booking</h2>
+          <form class="booking-form" name="booking_form">
+            <div class="booking-form-wrapper">
+              <label class="booking-form-field">
+                <input
+                  class="booking-form-input"
+                  type="text"
+                  name="user_name"
+                  required
+                  minlength="3"
+                  placeholder=" "
+                />
+                <span class="booking-form-tag">Name*</span>
+              </label>
+              <label class="booking-form-field">
+                <input
+                  class="booking-form-input"
+                  type="tel"
+                  name="User_phone"
+                  required
+                  minlength="12"
+                  maxlength="12"
+                  placeholder=" "
+                />
+                <span class="booking-form-tag">Phone*</span>
+              </label>
+            </div>
+            <label class="booking-form-field">
+              <textarea
+                class="booking-form-message"
+                name="user_message"
+                rows="5"
+                placeholder="Type your message..."
+              ></textarea>
+              <span class="booking-form-tag">Message</span>
+            </label>
+            <button class="booking-form-btn btn btn-dark" type="submit" disabled>Send</button>
+          </form>
         </section>
         <!-- Contacts section -->
         <section class="contacts section" id="contacts">
@@ -624,6 +661,54 @@
             <use href="./images/icons.svg#modal-close"></use>
           </svg>
         </button>
+
+        <strong class="modal-title">Please, leave your contacts</strong>
+        <form class="modal-form">
+          <label class="modal-form-field">
+            <span class="modal-form-tag">User name</span>
+            <input class="modal-form-input" type="text" name="name" />
+            <svg class="modal-form-icon" width="24" height="24">
+              <use href="./images/icons.svg#user"></use>
+            </svg>
+          </label>
+          <label class="modal-form-field">
+            <span class="modal-form-tag">User phone</span>
+            <input class="modal-form-input" type="tel" name="phone" />
+            <svg class="modal-form-icon" width="24" height="24">
+              <use href="./images/icons.svg#phone"></use>
+            </svg>
+          </label>
+          <label class="modal-form-field">
+            <span class="modal-form-tag">User email</span>
+            <input class="modal-form-input" type="email" name="email" />
+            <svg class="modal-form-icon" width="24" height="24">
+              <use href="./images/icons.svg#email"></use>
+            </svg>
+          </label>
+          <label class="modal-form-field">
+            <span class="modal-form-tag">Comment</span>
+            <textarea
+              class="modal-form-comment"
+              name=""
+              rows="10"
+              placeholder="Text input"
+            ></textarea>
+          </label>
+
+          <label class="modal-form-agreement">
+            <input class="modal-form-checkbox visually-hidden" type="checkbox" />
+            <svg class="modal-form-checkbox-icons" width="16" height="16">
+              <use class="unchecked" href="./images/icons.svg#unchecked"></use>
+              <use class="checked" href="./images/icons.svg#checked"></use>
+            </svg>
+            <span class="modal-form-agreement-desc">
+              I accept the terms and conditions of the
+              <a class="modal-form-agreement-link" href="">Privacy Policy</a>
+            </span>
+          </label>
+
+          <button class="modal-form-btn btn" type="submit">Send</button>
+        </form>
       </div>
     </div>
 
@@ -633,5 +718,6 @@
 
     <script src="./js/header.js"></script>
     <script src="./js/modal.js"></script>
+    <!-- <script src="./js/form.js"></script> -->
   </body>
 </html>
