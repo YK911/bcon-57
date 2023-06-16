@@ -131,7 +131,6 @@ img {
 }
 @media only screen and (min-width: 1200px) {
   .main-title {
-    display: inline-flex;
     font-size: 72px;
     line-height: 1.18;
   }
@@ -270,7 +269,12 @@ img {
   align-items: center;
 }
 .header-logo {
-  margin-right: 124px;
+  margin-right: 70px;
+}
+@media only screen and (min-width: 1200px) {
+  .header-logo {
+    margin-right: 124px;
+  }
 }
 .header-icon {
   transition: fill var(--anim-slow);
@@ -278,6 +282,12 @@ img {
 @media only screen and (max-width: 767px) {
   .header-icon {
     fill: var(--light-cl);
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .header-icon {
+    width: 70px;
+    height: 56px;
   }
 }
 .header.no-transparency .header-icon {
@@ -294,7 +304,12 @@ img {
 .header-list {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 16px;
+}
+@media only screen and (min-width: 1200px) {
+  .header-list {
+    gap: 30px;
+  }
 }
 .header-link {
   display: block;
@@ -467,7 +482,6 @@ img {
 
 @media only screen and (min-width: 1200px) {
   .hero-title {
-    width: fit-content;
     width: 450px;
     text-align: center;
 
