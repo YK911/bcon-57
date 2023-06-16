@@ -121,22 +121,40 @@
         <div class="about-container container">
           <ul class="about-list">
             <li class="about-item">
-              <img
-                class="about-img"
-                src="./images/about/img-1.jpg"
-                alt="Beard trim"
-                width="270"
-                height="445"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/about/img-1_desk@1x.jpg 1x, ./images/about/img-1_desk@1x.jpg 2x"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/about/img-1_tab@1x.jpg 1x, ./images/about/img-1_tab@1x.jpg 2x"
+                />
+                <img
+                  class="about-img"
+                  src="./images/about/img-1_tab@1x.jpg"
+                  alt="Beard trim"
+                  loading="lazy"
+                />
+              </picture>
             </li>
             <li class="about-item">
-              <img
-                class="about-img"
-                src="./images/about/img-2.jpg"
-                alt="Straight razor shave"
-                width="270"
-                height="445"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/about/img-2_desk@1x.jpg 1x, ./images/about/img-2_desk@1x.jpg 2x"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/about/img-2_tab@1x.jpg 1x, ./images/about/img-2_tab@1x.jpg 2x"
+                />
+                <img
+                  class="about-img"
+                  src="./images/about/img-2_tab@1x.jpg"
+                  alt="Straight razor shave"
+                  loading="lazy"
+                />
+              </picture>
             </li>
           </ul>
           <div class="about-right-side">
@@ -252,12 +270,36 @@
           <ul class="team-list card-set">
             <li class="team-item card-set-item">
               <div class="team-thumb">
-                <img
+                <!-- Дескриптор x -->
+                <!-- <img
                   class="team-pic"
+                  srcset="./images/team/img-1_370.jpg 1x, ./images/team/img-1_740.jpg 2x"
                   src="./images/team/img-1.jpg"
                   alt="John Smith - Extreme Barber"
                   width="370"
                   height="346"
+                /> -->
+                <!-- Дескриптор w -->
+                <!--
+                  screen 425px || frame size = 425px || DPR = 1
+                  frame size * DPR = 425px
+                 -->
+                <img
+                  class="team-pic"
+                  srcset="
+                    ./images/team/img-1_370.jpg 370w,
+                    ./images/team/img-1_418.jpg 418w,
+                    ./images/team/img-1_450.jpg 450w,
+                    ./images/team/img-1_740.jpg 740w,
+                    ./images/team/img-1_836.jpg 836w,
+                    ./images/team/img-1_900.jpg 900w
+                  "
+                  sizes="(min-width: 1200px) 370px, (min-width: 768px) 450px, (min-width: 480px) 418px, 100vw"
+                  src="./images/team/img-1_450.jpg"
+                  alt="John Smith - Extreme Barber"
+                  width="450"
+                  height="346"
+                  loading="lazy"
                 />
                 <div class="overlay">
                   <p class="overlay-text">
@@ -330,10 +372,20 @@
               <div class="team-thumb">
                 <img
                   class="team-pic"
-                  src="./images/team/img-2.jpg"
+                  srcset="
+                    ./images/team/img-2_370.jpg 370w,
+                    ./images/team/img-2_418.jpg 418w,
+                    ./images/team/img-2_450.jpg 450w,
+                    ./images/team/img-2_740.jpg 740w,
+                    ./images/team/img-2_836.jpg 836w,
+                    ./images/team/img-2_900.jpg 900w
+                  "
+                  sizes="(min-width: 1200px) 370px, (min-width: 768px) 450px, (min-width: 480px) 418px, 100vw"
+                  src="./images/team/img-2_450.jpg"
                   alt="Michele Doe - Extreme Barber"
-                  width="370"
+                  width="450"
                   height="346"
+                  loading="lazy"
                 />
                 <div class="overlay">
                   <p class="overlay-text">
@@ -405,10 +457,20 @@
               <div class="team-thumb">
                 <img
                   class="team-pic"
-                  src="./images/team/img-3.jpg"
+                  srcset="
+                    ./images/team/img-3_370.jpg 370w,
+                    ./images/team/img-3_418.jpg 418w,
+                    ./images/team/img-3_450.jpg 450w,
+                    ./images/team/img-3_740.jpg 740w,
+                    ./images/team/img-3_836.jpg 836w,
+                    ./images/team/img-3_900.jpg 900w
+                  "
+                  sizes="(min-width: 1200px) 370px, (min-width: 768px) 450px, (min-width: 480px) 418px, 100vw"
+                  src="./images/team/img-3_450.jpg"
                   alt="Alan Black - Extreme Barber"
-                  width="370"
+                  width="450"
                   height="346"
+                  loading="lazy"
                 />
                 <div class="overlay">
                   <p class="overlay-text">
@@ -491,13 +553,67 @@
               data-aos-duration="600"
               data-aos-delay="300"
             >
-              <img
-                class="gallery-img"
-                src="./images/gallery/img-1.jpg"
-                alt="Haircut under the nozzle"
-                width="270"
-                height="360"
-              />
+              <picture>
+                <!-- Desktop screen >= 1200px -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="
+                    ./images/gallery/img-1_desk@1x.webp 1x,
+                    ./images/gallery/img-1_desk@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="
+                    ./images/gallery/img-1_desk@1x.jpg 1x,
+                    ./images/gallery/img-1_desk@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <!-- Tablet screen >= 768px -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./images/gallery/img-1_tab@1x.webp 1x,
+                    ./images/gallery/img-1_tab@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./images/gallery/img-1_tab@1x.jpg 1x,
+                    ./images/gallery/img-1_tab@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <!-- Phone screen <= 767px -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./images/gallery/img-1_mob@1x.webp 1x,
+                    ./images/gallery/img-1_mob@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./images/gallery/img-1_mob@1x.jpg 1x,
+                    ./images/gallery/img-1_mob@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="gallery-img"
+                  src="./images/gallery/img-1_mob@1x.jpg"
+                  alt="Haircut under the nozzle"
+                  width="418"
+                  height="360"
+                  loading="lazy"
+                />
+              </picture>
             </li>
             <li
               class="gallery-item card-set-item"
@@ -505,13 +621,67 @@
               data-aos-duration="600"
               data-aos-delay="600"
             >
-              <img
-                class="gallery-img"
-                src="./images/gallery/img-2.jpg"
-                alt="Beard trim"
-                width="270"
-                height="360"
-              />
+              <picture>
+                <!-- Desktop screen >= 1200px -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="
+                    ./images/gallery/img-2_desk@1x.webp 1x,
+                    ./images/gallery/img-2_desk@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="
+                    ./images/gallery/img-2_desk@1x.jpg 1x,
+                    ./images/gallery/img-2_desk@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <!-- Tablet screen >= 768px -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./images/gallery/img-2_tab@1x.webp 1x,
+                    ./images/gallery/img-2_tab@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./images/gallery/img-2_tab@1x.jpg 1x,
+                    ./images/gallery/img-2_tab@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <!-- Phone screen <= 767px -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./images/gallery/img-2_mob@1x.webp 1x,
+                    ./images/gallery/img-2_mob@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./images/gallery/img-2_mob@1x.jpg 1x,
+                    ./images/gallery/img-2_mob@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="gallery-img"
+                  src="./images/gallery/img-2_mob@2x.jpg"
+                  alt="Beard trim"
+                  width="418"
+                  height="360"
+                  loading="lazy"
+                />
+              </picture>
             </li>
             <li
               class="gallery-item card-set-item"
@@ -519,13 +689,67 @@
               data-aos-duration="600"
               data-aos-delay="900"
             >
-              <img
-                class="gallery-img"
-                src="./images/gallery/img-3.jpg"
-                alt="Trainee’s haircut"
-                width="270"
-                height="360"
-              />
+              <picture>
+                <!-- Desktop screen >= 1200px -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="
+                    ./images/gallery/img-3_desk@1x.webp 1x,
+                    ./images/gallery/img-3_desk@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="
+                    ./images/gallery/img-3_desk@1x.jpg 1x,
+                    ./images/gallery/img-3_desk@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <!-- Tablet screen >= 768px -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./images/gallery/img-3_tab@1x.webp 1x,
+                    ./images/gallery/img-3_tab@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./images/gallery/img-3_tab@1x.jpg 1x,
+                    ./images/gallery/img-3_tab@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <!-- Phone screen <= 767px -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./images/gallery/img-3_mob@1x.webp 1x,
+                    ./images/gallery/img-3_mob@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./images/gallery/img-3_mob@1x.jpg 1x,
+                    ./images/gallery/img-3_mob@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="gallery-img"
+                  src="./images/gallery/img-3_mob@2x.jpg"
+                  alt="Trainee’s haircut"
+                  width="418"
+                  height="360"
+                  loading="lazy"
+                />
+              </picture>
             </li>
             <li
               class="gallery-item card-set-item"
@@ -533,13 +757,67 @@
               data-aos-duration="600"
               data-aos-delay="1200"
             >
-              <img
-                class="gallery-img"
-                src="./images/gallery/img-4.jpg"
-                alt="Straight razor shave"
-                width="270"
-                height="360"
-              />
+              <picture>
+                <!-- Desktop screen >= 1200px -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="
+                    ./images/gallery/img-4_desk@1x.webp 1x,
+                    ./images/gallery/img-4_desk@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="
+                    ./images/gallery/img-4_desk@1x.jpg 1x,
+                    ./images/gallery/img-4_desk@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <!-- Tablet screen >= 768px -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./images/gallery/img-4_tab@1x.webp 1x,
+                    ./images/gallery/img-4_tab@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./images/gallery/img-4_tab@1x.jpg 1x,
+                    ./images/gallery/img-4_tab@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <!-- Phone screen <= 767px -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./images/gallery/img-4_mob@1x.webp 1x,
+                    ./images/gallery/img-4_mob@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./images/gallery/img-4_mob@1x.jpg 1x,
+                    ./images/gallery/img-4_mob@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="gallery-img"
+                  src="./images/gallery/img-4_mob@2x.jpg"
+                  alt="Straight razor shave"
+                  width="418"
+                  height="360"
+                  loading="lazy"
+                />
+              </picture>
             </li>
           </ul>
         </div>
